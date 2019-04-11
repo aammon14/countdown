@@ -12,15 +12,10 @@ class App extends Component {
   }
 
   secondsToTime(secs) {
-    let days = Math.floor(secs / (60 * 60 * 24));
-
-    let divisor_for_hours = secs % (60 * 60 * 24);
-    let hours = Math.floor(divisor_for_hours / (60 * 60));
-
-    let divisor_for_minutes = divisor_for_hours % (60 * 60);
-    let minutes = Math.floor(divisor_for_minutes / 60);
-
-    let seconds = Math.ceil(divisor_for_minutes % 60);
+    var days = Math.floor(secs / (60 * 60 * 24));
+    var hours = Math.floor((secs % (60 * 60 * 24)) / (60 * 60));
+    var minutes = Math.floor((secs % (60 * 60)) / 60);
+    var seconds = Math.floor(secs % 60);
 
     let obj = {
       d: days,
